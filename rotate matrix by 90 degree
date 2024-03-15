@@ -1,0 +1,23 @@
+import java.util.*;
+public class Solution {
+    public static void rotateMatrix(int [][]mat){
+        // Write your code here.
+        for(int i=0;i<mat.length;i++){
+            for(int j=i;j<mat[0].length;j++){
+                int temp=mat[i][j];
+                mat[i][j]=mat[j][i];
+                mat[j][i]=temp;
+            }
+        }
+        for(int i=0;i<mat.length;i++){
+            int k=mat.length-1;
+            for(int j=0;j<mat[0].length/2;j++){
+                int temp=mat[i][j];
+                mat[i][j]=mat[i][k];
+                mat[i][k]=temp;
+                k--; 
+            }
+        }    
+    
+    }
+}
